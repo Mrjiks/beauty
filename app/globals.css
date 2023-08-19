@@ -18,10 +18,14 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
+    rgb(var(--background-start-rgb)); */
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    180deg,
+    rgba(4, 4, 4, 1) 24%,
+    rgba(95, 33, 98, 1) 100%,
+    rgba(231, 111, 235, 1) 100%
+  );
+  width: 100%;
+  /* background-color: #330f31; */
 }
