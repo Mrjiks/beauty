@@ -25,10 +25,10 @@ const About = () => {
     },
   ];
   return (
-    <section className='container flex flex-col  min-h-screen items-center  py-20 mx-auto'>
-      <div className='flex flex-col'>
-        <h2 className='text-[3rem]'>ABOUT US</h2>
-        <p className='mb-10'>
+    <section className='container flex flex-col  min-h-screen items-center  py-20 mx-auto px-5'>
+      <div className='flex flex-col '>
+        <h2 className='text-[3rem] '>ABOUT US</h2>
+        <p className='mb-10 text-justify'>
           we believe that beauty is an art form, and every individual deserves to feel confident and
           empowered in their own unique skin. Our makeup website is dedicated to bringing you a
           comprehensive range of services, top-quality makeup products, and an enriching beauty
@@ -43,28 +43,27 @@ const About = () => {
           alt='Pictures of ladies hairstyles'
           className='object-cover'
         />
+        <h2 className='md:text-[3rem] py-4'>MEET OUR AMAZING TEAM</h2>
       </div>
 
-      <div className='flex flex-col justify-center items-center w-full'>
-        <h2 className='text-[3rem] py-4'>MEET OUR AMAZING TEAM</h2>
-
-        <div className='relative flex justify-around items-center gap-4'>
-          {teams.map(({ src, name, text }) => {
-            return (
-              <div key={src} className='flex flex-col w-full h-[200px] mb-20'>
+      <div className='md:grid lg:grid-cols-4 md:grid-cols-3'>
+        {teams.map(({ src, name, text }) => {
+          return (
+            <div key={src} className=''>
+              <div className='px-5 md:grid'>
                 <Image
                   src={`${src}`}
-                  width={1312}
-                  height={883}
+                  width={400}
+                  height={200}
                   alt='Pictures of ladies hairstyles'
-                  className='object-cover'
+                  className='object-cover px-4 py-4'
                 />
-                <p>{name}</p>
-                <p className='mt-4'>{text}</p>
+                <p className='py-2'>{name}</p>
+                <p className='mt-2'>{text}</p>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
