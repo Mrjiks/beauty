@@ -5,6 +5,11 @@ import Button from "../components/Button";
 import { categories } from "../navLinks";
 import ProductNav from "../components/ProductNav";
 
+type Categories = {
+  href: string;
+  id: number;
+  name: string;
+}[];
 const Shop = () => {
   const teams = [
     { src: "/products/1.png", name: "Rossy Lipstick", price: "N5000" },
@@ -24,6 +29,7 @@ const Shop = () => {
     { src: "/products/13.jpg", name: "Rossy Lipstick", price: "N5000" },
   ];
   const featured = ["/products/1.png", "/products/2.png", "/products/3.png", "/products/5.png"];
+
   return (
     <section className='container flex flex-col w-full min-h-screen items-center  py-20 overflow-hidden mx-auto'>
       <h2 className='text-[3rem] py-4'>SHOP TODAY</h2>

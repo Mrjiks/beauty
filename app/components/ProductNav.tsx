@@ -2,13 +2,14 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import HorizontalBar from "@/app/components/HorizontalBar";
+// import { CategoryType } from "../../products";
 
-const ProductNav = ({ categories }) => {
+const ProductNav = ({ categories }: any) => {
   const pathname = usePathname();
   return (
     <>
       <nav className='flex gap-4 items-center justify-center mb-2'>
-        {categories.map((link) => {
+        {categories.map((link: any) => {
           const isActive = pathname === link.href;
 
           return (

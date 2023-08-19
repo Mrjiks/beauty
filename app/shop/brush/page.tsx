@@ -45,7 +45,7 @@ const Eyelashes = () => {
               </div>
               <div className='flex  items-center justify-between gap-4 px-2'>
                 <p className=''>{price}</p>
-                <Button title='Add to Cart' type />
+                <Button title='Add to Cart' type='' />
               </div>
             </div>
           );

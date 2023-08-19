@@ -1,8 +1,8 @@
 import React from "react";
 
 type ButtonType = {
-  type: string;
-  title: string;
+  type?: string;
+  title?: string;
 };
 const Button = ({ type, title }: ButtonType) => {
   return (

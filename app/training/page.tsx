@@ -34,7 +34,7 @@ const Training = () => {
               </div>
               <div className='flex  items-center justify-between gap-4 px-1'>
                 <p className='cursor-pointer'>{price}</p>
-                <Button title='Book a Date' type />
+                <Button title='Book a Date' type='' />
               </div>
             </div>
           );
