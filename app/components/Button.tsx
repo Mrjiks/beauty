@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes } from "react";
+import React from "react";
 
 type ButtonType = {
   type: string;
