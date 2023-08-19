@@ -1,6 +1,10 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
-const Button = ({ type, title }) => {
+type ButtonType = {
+  type: string;
+  title: string;
+};
+const Button = ({ type, title }: ButtonType) => {
   return (
     <div>
       <button className={`${type && "bg-[#cd00c5] w-[100px] h-[30px]  rounded-sm my-5"}`}>
