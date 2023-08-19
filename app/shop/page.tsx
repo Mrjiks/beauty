@@ -45,7 +45,7 @@ const Shop = () => {
                   />
                   <div className='flex  items-center justify-between gap-4'>
                     <p className=''>N5000</p>
-                    <Button title='Read More...' type />
+                    <Button title='Read More...' type='' />
                   </div>
                 </div>
               </div>
@@ -70,7 +70,7 @@ const Shop = () => {
               </div>
               <div className='flex  items-center justify-between gap-4 px-1'>
                 <p className=''>{price}</p>
-                <Button title='Add to Cart' type />
+                <Button title='Add to Cart' type='' />
               </div>
             </div>
           );

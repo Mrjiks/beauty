@@ -1,6 +1,13 @@
 import React from "react";
+type InputType = {
+  label: string;
+  type: string;
+  id: string;
+  value: string;
+  placeholder: string;
+};
 
-const Input = ({ label, type, id, value, placeholder }) => {
+const Input = ({ label, type, id, value, placeholder }: InputType) => {
   return (
     <div className='flex flex-col gap-4'>
       <label htmlFor='name'>{label}</label>
