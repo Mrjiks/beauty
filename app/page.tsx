@@ -16,7 +16,7 @@ export default function Home() {
           <p>
             Unleash Your Beauty with our <br /> Stunning Makeup Collection
           </p>
-          <Button type='primary' title='Shop Now' />
+          <Button type title='Shop Now' />
         </div>
         <div className='ml-4'>
           <Image

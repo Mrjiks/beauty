@@ -18,7 +18,7 @@ const Featured = () => {
           </div>
           <div className='flex gap-4 items-center'>
             <p className='bg-[#0f0d0f] text-white w-[100px] my-3 h-[30px] text-center'>N6,000</p>
-            <Button type='primary' title='Shop Now' />
+            <Button type title='Shop Now' />
           </div>
         </div>
         <div className='w-full lg:w-1/2 lg:mt-20 md:mt-40'>

@@ -49,7 +49,7 @@ const Cta = () => {
             placeholder='Your phone number'
           />
 
-          <Button type='primary' title='Register' />
+          <Button type title='Register' />
         </form>
       </div>
     </main>

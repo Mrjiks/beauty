@@ -8,7 +8,7 @@ import { FaBars } from "react-icons/fa";
 const NavBar = () => {
   const pathname = usePathname();
   return (
-    <div className='container z-10 mx-auto bg-[#160716]  flex items-center justify-between px-10'>
+    <div className='container z-10 mx-auto bg-[#160716]  flex items-center justify-between px-10 h-[100px] sticky inset-0'>
       <Link href='/'>
         <div className='shadow-sm'>BeautyShop</div>
       </Link>

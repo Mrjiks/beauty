@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' className='transition-all'>
-      <body className={`${lexend.className}`}>
+      <body className={`${lexend.className} dark:bg-white dark:text-black`}>
         <NavBar />
         {children}
         <Footer />
