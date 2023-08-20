@@ -10,13 +10,13 @@ const Training = () => {
     { src: "/team/4.jpg", name: "Rossy Naija Weevy", price: "Learn More" },
   ];
   return (
-    <section className='container flex flex-col mx-auto min-h-screen items-center  py-20 overflow-hidden'>
-      <h2 className='text-[3rem] py-4'>Learn From Us Today</h2>
+    <section className='container flex flex-col w-full min-h-screen items-center  py-20 overflow-hidden mx-auto'>
+      <h2 className='md:text-[3rem] py-4 text-3xl text-justify'>Learn From Us Today</h2>
 
       <div className='flex w-full justify-start'>
-        <h3 className='text-[2rem]'>Featured Styles</h3>
+        <h3 className='text-[2rem] px-3 py-3'>Featured Styles</h3>
       </div>
-      <div className='grid grid-cols-3 gap-3'>
+      <div className='grid md:grid-cols-2 gap-6 lg:grid-cols-3  py-10 px-3'>
         {teams.map((item) => {
           const { src, name, price } = item;
           return (

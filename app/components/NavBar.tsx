@@ -3,7 +3,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React, { useState } from "react";
 import { links } from "../navLinks";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaCross } from "react-icons/fa";
+import { FaX } from "react-icons/fa6";
 import MobileMenu from "./MobileMenu";
 
 const NavBar = () => {
@@ -38,8 +39,8 @@ const NavBar = () => {
           </ul>
         </nav>
       </div>
-      <div className='lg:hidden' onClick={() => setShow(!show)}>
-        <FaBars />
+      <div className='lg:hidden cursor-pointer' onClick={() => setShow(!show)}>
+        {show ? <FaX /> : <FaBars />}
       </div>
       {show && (
         <div className=' absolute top-20  flex justify-center '>

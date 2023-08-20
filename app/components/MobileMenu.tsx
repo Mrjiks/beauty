@@ -12,8 +12,8 @@ type MenuType = {
 const MobileMenu = ({ onClick, show }: MenuType) => {
   const pathname = usePathname();
   return (
-    <div className='flex flex-col justify-center h-[100px] absolute top-4   bg-black w-full ml-0 lg:hidden'>
-      <nav className='flex justify-between  lg:hidden  items-center bg-black'>
+    <div className='flex flex-col justify-center  absolute top-4   bg-black w-full ml-0 lg:hidden  z-20'>
+      <nav className='flex justify-between  lg:hidden  items-center bg-black  w-full'>
         <ul className='flex  gap-4 bg-black h-[100px] items-center w-full'>
           {links.map((link) => {
             const isActive = pathname === link.href;
