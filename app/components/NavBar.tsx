@@ -1,12 +1,14 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { links } from "../navLinks";
 import { FaBars } from "react-icons/fa";
+import MobileMenu from "./MobileMenu";
 
 const NavBar = () => {
   const pathname = usePathname();
+  const [show, setShow] = useState(false);
   return (
     <div className='container z-10 mx-auto bg-[#160716]  flex items-center justify-between px-10 h-[100px] sticky inset-0'>
       <Link href='/'>
@@ -36,9 +38,14 @@ const NavBar = () => {
           </ul>
         </nav>
       </div>
-      <div className='lg:hidden'>
+      <div className='lg:hidden' onClick={() => setShow(!show)}>
         <FaBars />
       </div>
+      {show && (
+        <div className=' absolute top-20  flex justify-center '>
+          <MobileMenu onClick={() => setShow(!show)} show />
+        </div>
+      )}
     </div>
   );
 };

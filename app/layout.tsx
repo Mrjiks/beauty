@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en' className='transition-all'>
       <body className={`${lexend.className} dark:bg-white dark:text-black`}>
         <NavBar />
+
         {children}
         <Footer />
       </body>
