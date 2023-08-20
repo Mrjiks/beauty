@@ -8,7 +8,7 @@ const ProductNav = ({ categories }: any) => {
   const pathname = usePathname();
   return (
     <>
-      <nav className='flex gap-4 items-center justify-center mb-2'>
+      <nav className='hidden md:flex  gap-4 items-center justify-center mb-2'>
         {categories.map((link: any) => {
           const isActive = pathname === link.href;
 

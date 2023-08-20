@@ -46,7 +46,7 @@ const About = () => {
         <h2 className='md:text-[3rem] py-4'>MEET OUR AMAZING TEAM</h2>
       </div>
 
-      <div className='md:grid lg:grid-cols-4 md:grid-cols-3'>
+      <div className='md:grid lg:grid-cols-4 md:grid-cols-3 mb-20'>
         {teams.map(({ src, name, text }) => {
           return (
             <div key={src} className=''>
@@ -56,7 +56,7 @@ const About = () => {
                   width={400}
                   height={200}
                   alt='Pictures of ladies hairstyles'
-                  className='object-cover px-4 py-4'
+                  className='object-cover  py-5'
                 />
                 <p className='py-2'>{name}</p>
                 <p className='mt-2'>{text}</p>

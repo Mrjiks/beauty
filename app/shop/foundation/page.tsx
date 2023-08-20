@@ -29,7 +29,7 @@ const Shop = () => {
       <div className='flex w-full justify-start'>
         <h3 className='text-[2rem] mb-4'>Foundation</h3>
       </div>
-      <div className='grid grid-cols-3 gap-3'>
+      <div className='grid md:grid-cols-3 gap-3'>
         {teams.map((item) => {
           const { src, name, price } = item;
           return (
@@ -45,7 +45,7 @@ const Shop = () => {
               </div>
               <div className='flex  items-center justify-between gap-4 px-2'>
                 <p className=''>{price}</p>
-                <Button title='Add to Cart' type='' />
+                <Button title='Add to Cart' type />
               </div>
             </div>
           );

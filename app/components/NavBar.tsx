@@ -3,7 +3,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import { links } from "../navLinks";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 
 const NavBar = () => {
@@ -11,7 +10,7 @@ const NavBar = () => {
   return (
     <div className='container z-10 mx-auto bg-[#160716]  flex items-center justify-between px-10'>
       <Link href='/'>
-        <div className='shadow-sm'>HouseofRossy</div>
+        <div className='shadow-sm'>BeautyShop</div>
       </Link>
       <div className='hidden lg:flex justify-between items-center'>
         <nav className='flex    justify-between items-center  h-[80px] gap-4 '>

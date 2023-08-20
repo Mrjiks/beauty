@@ -1,7 +1,7 @@
 import React from "react";
 
 type ButtonType = {
-  type?: string;
+  type?: boolean;
   title?: string;
 };
 const Button = ({ type, title }: ButtonType) => {
