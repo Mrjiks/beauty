@@ -49,7 +49,7 @@ const Shop = () => {
                     width={400}
                     height={100}
                     alt='Pictures of ladies hairstyles'
-                    className='object-cover bg-gray-200 h-[300px] block w-auto p-3 lg:p-10'
+                    className='object-cover bg-gray-200 h-[300px] block w-auto p-3'
                   />
                   <div className='flex  items-center justify-between gap-4 py-1'>
                     <p className=''>N5000</p>
@@ -73,7 +73,7 @@ const Shop = () => {
         </div>
       </div>
       {showFilter && (
-        <div className='md:hidden grid-cols-2 grid  gap-3 relative'>
+        <div className='md:hidden grid-cols-2 grid  gap-3 relative lg:hidden'>
           <MobileProductNav categories={categories} onClick={() => setShowFilter(!showFilter)} />
         </div>
       )}
