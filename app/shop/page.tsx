@@ -37,20 +37,21 @@ const Shop = () => {
       <h2 className='text-[3rem] py-4'>SHOP TODAY</h2>
       <ProductNav categories={categories} />
 
-      <div className='flex w-full justify-between flex-col px-5 '>
+      <div className='flex w-full justify-between flex-col  '>
         <h3 className='text-[2rem] mb-4'>Featured Products</h3>
         <div className='grid md:grid-cols-2 gap-6 lg:grid-cols-3  py-10'>
           {[...Array(3)].map((image, index) => {
             return (
               <div key={index} className='relative'>
                 <div key={image} className='flex flex-col w-full h-[400px] mb-10 overflow-hidden'>
-                  <Image
-                    src={`${featured[index]}`}
-                    width={400}
-                    height={100}
-                    alt='Pictures of ladies hairstyles'
-                    className='object-cover bg-gray-200 h-[300px] block w-auto p-3'
-                  />
+                  <div className='aspect-square relative '>
+                    <Image
+                      src={`${featured[index]}`}
+                      fill
+                      alt='Pictures of ladies hairstyles'
+                      className='object-fit bg-gray-200 h-[300px] block w-auto p-3'
+                    />
+                  </div>
                   <div className='flex  items-center justify-between gap-4 py-1'>
                     <p className=''>N5000</p>
                     <Button title='Read More' type />
@@ -78,22 +79,25 @@ const Shop = () => {
         </div>
       )}
 
-      <div className='grid md:grid-cols-2 gap-6 lg:grid-cols-3 px-5'>
+      <div className='grid grid-cols-4 gap-12'>
         {teams.map((item) => {
           const { src, name, price } = item;
           return (
-            <div key={src} className='flex flex-col  justify-between'>
-              <img
-                src={src}
-                alt='Pictures of ladies hairstyles'
-                className='object-cover bg-gray-200 h-[300px] block w-auto p-1 '
-              />
+            <div key={src} className='col-span-4 md:col-span-2 lg:col-span-1 w-full'>
+              <div className='aspect-square relative '>
+                <Image
+                  fill
+                  src={src}
+                  alt='Pictures of ladies hairstyles'
+                  className='object-fit bg-white '
+                />
+              </div>
               <div className='flex items-center justify-between px-1'>
                 <p className='capitalize'>{name}</p>
                 <img src='./products/rating.png' alt='' />
               </div>
               <div className='flex  items-center justify-between gap-4 py-1'>
-                <p className=''>{price}</p>
+                <p>{price}</p>
                 <Button title='Add to Cart' type />
               </div>
             </div>
