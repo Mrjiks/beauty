@@ -79,7 +79,7 @@ const Shop = () => {
         </div>
       )}
 
-      <div className='grid grid-cols-4 gap-12'>
+      <div className='grid grid-cols-4 gap-12 w-full px-4'>
         {teams.map((item) => {
           const { src, name, price } = item;
           return (

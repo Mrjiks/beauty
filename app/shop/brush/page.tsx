@@ -22,12 +22,12 @@ const Eyelashes = () => {
   ];
   return (
     <section className='container  mx-auto '>
-      <h2 className='text-[3rem] py-4'>SHOP TODAY</h2>
+      <h2 className='text-[2rem] py-4'>SHOP TODAY</h2>
       <ProductNav categories={categories} />
       <div className='flex w-full justify-start'>
         <h3 className='text-[2rem] mb-4'>Brushes</h3>
       </div>
-      <div className='grid grid-cols-4 gap-12 mx-2 '>
+      <div className='grid grid-cols-4 gap-12 w-full px-4 '>
         {teams.map((item) => {
           const { src, name, price } = item;
           return (

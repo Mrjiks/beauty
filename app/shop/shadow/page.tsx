@@ -29,7 +29,7 @@ const Eyelashes = () => {
       <div className='flex w-full justify-start'>
         <h3 className='text-[2rem] mb-4'>Shadows</h3>
       </div>
-      <div className='grid grid-cols-4 gap-12 mx-2 '>
+      <div className='grid grid-cols-4 gap-12 w-full px-4 '>
         {teams.map((item) => {
           const { src, name, price } = item;
           return (

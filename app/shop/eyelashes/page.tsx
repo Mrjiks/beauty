@@ -33,7 +33,7 @@ const Eyelashes = () => {
         {teams.map((item) => {
           const { src, name, price } = item;
           return (
-            <div key={src} className='col-span-4 md:col-span-2 lg:col-span-1'>
+            <div key={src} className='grid grid-cols-4 gap-12 w-full px-4'>
               <div className='aspect-square relative'>
                 <Image
                   fill
