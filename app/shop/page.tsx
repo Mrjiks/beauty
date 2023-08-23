@@ -68,7 +68,33 @@ const Shop = () => {
           <div className='md:hidden ' onClick={() => setShowFilter(!showFilter)}>
             <div className='flex items-center gap-2 cursor-pointer'>
               <span className='text-2xl'> Categories</span>
-              <span>{showFilter ? <FaChevronDown /> : <FaChevronUp />}</span>
+              <span>
+                {showFilter ? (
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 24 24'
+                    fill='currentColor'
+                    className=' h-8 text-purple-500 w-8'>
+                    <path
+                      fillRule='evenodd'
+                      d='M20.03 4.72a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 11.69l6.97-6.97a.75.75 0 011.06 0zm0 6a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 111.06-1.06L12 17.69l6.97-6.97a.75.75 0 011.06 0z'
+                      clipRule='evenodd'
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 24 24'
+                    fill='currentColor'
+                    className='w-8 h-8'>
+                    <path
+                      fillRule='evenodd'
+                      d='M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z'
+                      clipRule='evenodd'
+                    />
+                  </svg>
+                )}
+              </span>
             </div>
           </div>
         </div>
@@ -89,12 +115,12 @@ const Shop = () => {
                   fill
                   src={src}
                   alt='Pictures of ladies hairstyles'
-                  className='object-fit bg-white '
+                  className='object-fit bg-gray-200 '
                 />
               </div>
               <div className='flex items-center justify-between px-1'>
                 <p className='capitalize py-4 font-semibold'>{name}</p>
-                <img src='./products/rating.png' alt='rating' />
+                <img src='./products/rating.png' alt='' />
               </div>
               <div className='flex  items-center justify-between gap-4 py-1'>
                 <p>{price}</p>
