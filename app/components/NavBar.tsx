@@ -40,10 +40,10 @@ const NavBar = () => {
         </nav>
       </div>
       <div className='lg:hidden cursor-pointer' onClick={() => setShow(!show)}>
-        {show ? <FaX /> : <FaBars />}
+        {show ? <FaBars /> : <FaBars />}
       </div>
       {show && (
-        <div className=' absolute top-20  flex justify-center '>
+        <div className=' absolute top-20  flex justify-center'>
           <MobileMenu onClick={() => setShow(!show)} show />
         </div>
       )}

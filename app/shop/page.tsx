@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import { categories } from "../navLinks";
 import ProductNav from "../components/ProductNav";
 import MobileProductNav from "../components/MobileProductNav";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 type Categories = {
   href: string;
@@ -61,20 +61,20 @@ const Shop = () => {
             );
           })}
         </div>
-        <div className='flex justify-between items-center relative'>
-          <h3 className='text-[2rem] mb-4'>All Categories</h3>{" "}
+        <div className='flex justify-between items-center relative px-6'>
+          <h3 className='text-[2rem] mb-4'>
+            All <span className='hidden md:inline-flex'>Products</span>
+          </h3>{" "}
           <div className='md:hidden ' onClick={() => setShowFilter(!showFilter)}>
             <div className='flex items-center gap-2 cursor-pointer'>
-              <span> Filters</span>
-              <span>
-                <FaChevronDown />
-              </span>
+              <span className='text-2xl'> Categories</span>
+              <span>{showFilter ? <FaChevronDown /> : <FaChevronUp />}</span>
             </div>
           </div>
         </div>
       </div>
       {showFilter && (
-        <div className='md:hidden grid-cols-2 grid  gap-3 relative lg:hidden'>
+        <div className=' grid-cols-2 grid  gap-3 relative z-30 md:hidden lg:hidden '>
           <MobileProductNav categories={categories} onClick={() => setShowFilter(!showFilter)} />
         </div>
       )}
@@ -93,8 +93,8 @@ const Shop = () => {
                 />
               </div>
               <div className='flex items-center justify-between px-1'>
-                <p className='capitalize'>{name}</p>
-                <img src='./products/rating.png' alt='' />
+                <p className='capitalize py-4 font-semibold'>{name}</p>
+                <img src='./products/rating.png' alt='rating' />
               </div>
               <div className='flex  items-center justify-between gap-4 py-1'>
                 <p>{price}</p>
