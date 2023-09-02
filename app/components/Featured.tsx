@@ -5,7 +5,7 @@ const Featured = () => {
   return (
     <main className='container flex md:flex-row flex-col bg-[#4b1449]  relative mt-20 py-10 mx-auto'>
       <div className='flex absolute top-0 left-0 h-[100px] bg-[#1c0a1c] w-full mb-4 px-5'>
-        <h2 className='text-center py-10'>Top sales of the month</h2>
+        <h2 className='text-center py-10 md:font-bold md:text-2xl'>Top sales of the month</h2>
       </div>
       <div className='flex  md:flex-row flex-col  px-5'>
         <div className='flex flex-col  mt-20  md:mt-40'>

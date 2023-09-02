@@ -27,7 +27,7 @@ const Shop = () => {
       <h2 className='text-[3rem] py-4'>SHOP TODAY</h2>
       <ProductNav categories={categories} />
       <div className='flex w-full justify-start'>
-        <h3 className='text-[2rem] mb-4'>Shadows</h3>
+        <h3 className='text-[2rem] mb-4'>Foundations</h3>
       </div>
       <div className='grid grid-cols-4 gap-12 w-full px-4'>
         {teams.map((item) => {

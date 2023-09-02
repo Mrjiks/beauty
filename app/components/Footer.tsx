@@ -1,8 +1,10 @@
+import Link from "next/link";
 import React from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <footer className='container mx-auto flex  md:justify-between flex-col bg-white text-black   h-auto overflow-hidden '>
+    <footer className=' mx-auto flex  md:justify-between flex-col bg-white text-black   h-auto overflow-hidden '>
       <div className='hidden md:flex justify-between px-10 py-4'>
         <div>
           <h1 className='text-purple-900'>BeautyShop</h1>
@@ -10,8 +12,10 @@ const Footer = () => {
         <div className='flex gap-4 justify-between flex-col md:flex-row'>
           <div className='flex flex-col gap-4  '>
             <h2>Company</h2>
-            <h3 className='font-thin text-sm'>About</h3>
-            <h3 className='font-thin text-sm'>Contact Us</h3>
+            <h3 className='font-thin text-sm'>
+              <Link href={"about"}>About</Link>
+            </h3>
+            <h3 className='font-thin text-sm'>Contact</h3>
             <h3 className='font-thin text-sm'>FAQs</h3>
             <h3 className='font-thin text-sm'>Careers</h3>
             <h3 className='font-thin text-sm'>Partners</h3>

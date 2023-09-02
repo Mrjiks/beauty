@@ -11,7 +11,7 @@ const NavBar = () => {
   const pathname = usePathname();
   const [show, setShow] = useState(false);
   return (
-    <div className='container z-10 mx-auto bg-[#160716]  flex items-center justify-between  h-[100px] sticky inset-0 px-4'>
+    <div className='container z-10 mx-auto bg-[#160716]  flex items-center justify-between  h-[100px] sticky inset-0'>
       <Link href='/'>
         <div className='shadow-sm'>BeautyShop</div>
       </Link>
@@ -67,7 +67,7 @@ const NavBar = () => {
         )}
       </div>
       {show && (
-        <div className=' absolute top-20 items-center flex justify-center w-full '>
+        <div className=' absolute top-[6.2rem] flex items-center'>
           <MobileMenu onClick={() => setShow(!show)} show />
         </div>
       )}
