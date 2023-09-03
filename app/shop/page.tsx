@@ -70,7 +70,7 @@ const Shop = () => {
             </Link>
           </h3>
           <div className='md:hidden ' onClick={() => setShowFilter(!showFilter)}>
-            <div className='flex items-center gap-2 cursor-pointer hover:text-purple-500'>
+            <div className='flex items-center gap-2 cursor-pointer hover:text-purple-500 mb-4'>
               <span className={`text-2xl ${showFilter && "text-purple-500"}`}> Categories</span>
               <AnimatePresence>
                 <motion.span>
