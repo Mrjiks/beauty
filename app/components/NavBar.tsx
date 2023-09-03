@@ -15,7 +15,7 @@ const NavBar = () => {
         <div className='shadow-sm ml-4'>BeautyShop</div>
       </Link>
       <div className='hidden md:flex justify-between items-center'>
-        <nav className='flex    justify-between items-center  h-[80px] gap-4 '>
+        <nav className='flex    justify-between items-center  h-[80px] gap-4 mr-4'>
           <ul className='flex justify-around  gap-4'>
             <>
               {links.map((link) => {

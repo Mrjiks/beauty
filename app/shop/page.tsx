@@ -7,6 +7,7 @@ import ProductNav from "../components/ProductNav";
 import MobileProductNav from "../components/MobileProductNav";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 type Categories = {
   href: string;
@@ -17,13 +18,13 @@ const teams = [
   { src: "/products/1.png", name: "Rossy Lipstick", price: "N5000" },
   { src: "/products/2.png", name: "Rossy Foundation", price: "N5000" },
   { src: "/products/3.png", name: "Rossy Foundation", price: "N5000" },
-  { src: "/products/9.png", name: "Rossy powder", price: "N5000" },
+
   { src: "/products/5.png", name: "Rossy powder", price: "N5000" },
   { src: "/products/6.png", name: "Rossy powder", price: "N5000" },
   { src: "/products/7.png", name: "Beauty Blender", price: "N5000" },
   { src: "/products/8.png", name: "Rossy Brush", price: "N5000" },
   { src: "/products/9.png", name: "Rossy powder", price: "N5000" },
-  { src: "/products/6.png", name: "Rossy Lipstick", price: "N5000" },
+
   { src: "/products/11.jpg", name: "Rossy Lipstick", price: "N5000" },
   { src: "/products/14.jpg", name: "Rossy Lipstick", price: "N5000" },
   { src: "/products/12.jpg", name: "Rossy Lipstick", price: "N5000" },
@@ -34,12 +35,12 @@ const featured = ["/products/1.png", "/products/2.png", "/products/3.png", "/pro
 const Shop = () => {
   const [showFilter, setShowFilter] = useState(false);
   return (
-    <section className='container flex flex-col w-full min-h-screen items-center  py-20  mx-auto'>
-      <h2 className='text-[3rem] py-4'>SHOP TODAY</h2>
+    <section className='container flex flex-col w-full min-h-screen items-center  py-20  px-4'>
+      <h2 className='text-[3rem] py-4 text-center'>SHOP With US TODAY</h2>
       <ProductNav categories={categories} />
 
       <div className='flex w-full justify-between flex-col  '>
-        <h3 className='text-[2rem] mb-4'>Featured Products</h3>
+        <h3 className='text-[2rem] mb-4 '>Featured Products</h3>
         <div className='grid md:grid-cols-2 gap-6 lg:grid-cols-3  py-10'>
           {[...Array(3)].map((image, index) => {
             return (
@@ -63,12 +64,14 @@ const Shop = () => {
           })}
         </div>
         <div className='flex justify-between items-center relative px-6'>
-          <h3 className='text-[2rem] mb-4'>
-            All <span className='hidden md:inline-flex'>Products</span>
-          </h3>{" "}
+          <h3 className='text-[2rem] mb-4 hover:text-purple-500'>
+            <Link href={"shop"}>
+              All <span className='hidden md:inline-flex'>Products</span>
+            </Link>
+          </h3>
           <div className='md:hidden ' onClick={() => setShowFilter(!showFilter)}>
-            <div className='flex items-center gap-2 cursor-pointer'>
-              <span className='text-2xl'> Categories</span>
+            <div className='flex items-center gap-2 cursor-pointer hover:text-purple-500'>
+              <span className={`text-2xl ${showFilter && "text-purple-500"}`}> Categories</span>
               <AnimatePresence>
                 <motion.span>
                   {showFilter ? (
@@ -81,7 +84,7 @@ const Shop = () => {
                       xmlns='http://www.w3.org/2000/svg'
                       viewBox='0 0 24 24'
                       fill='currentColor'
-                      className=' h-8 text-purple-500 w-8'>
+                      className=' h-8 text-purple-500 hover:text-purple-500 w-8 '>
                       <path
                         fillRule='evenodd'
                         d='M20.03 4.72a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 11.69l6.97-6.97a.75.75 0 011.06 0zm0 6a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 111.06-1.06L12 17.69l6.97-6.97a.75.75 0 011.06 0z'
@@ -98,7 +101,7 @@ const Shop = () => {
                       xmlns='http://www.w3.org/2000/svg'
                       viewBox='0 0 24 24'
                       fill='currentColor'
-                      className='w-8 h-8'>
+                      className='w-8 h-8 hover:text-purple-500'>
                       <path
                         fillRule='evenodd'
                         d='M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z'
