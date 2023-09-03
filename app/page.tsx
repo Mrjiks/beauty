@@ -55,7 +55,7 @@ export default function Home() {
       <Cta />
       <div className='grid grid-cols-1  overflow-hidden w h-[800px w-auto] gap-8 grid-rows-2 relative md:hidden px-10 py-10 bg-black'>
         <motion.img
-          className=' absolute top-10 right-2'
+          className=' absolute top-10 right-10'
           animate={{ rotate: -45 }}
           transition={{
             duration: 1,
@@ -69,7 +69,7 @@ export default function Home() {
           alt='Pictures of ladies hairstyles'
         />
         <motion.img
-          className='absolute bottom-10 top-100 left-100 h-[100px] w-[100px]'
+          className='absolute bottom-10 top-100 left-100 h-[100px] w-[100px] ml-10'
           animate={{ rotate: 45 }}
           transition={{
             delay: 0.2,
@@ -84,7 +84,7 @@ export default function Home() {
           alt='Pictures of ladies hairstyles'
         />
         <motion.img
-          className=' absolute bottom-10 left-60 h-[100px] w-[100px]'
+          className=' absolute bottom-10 left-60 h-[100px] w-[100px] mr-10'
           animate={{ rotate: -45 }}
           transition={{
             delay: 0.3,
@@ -99,7 +99,7 @@ export default function Home() {
           alt='Pictures of ladies hairstyles'
         />
         <motion.img
-          className=' '
+          className='ml-10 '
           animate={{ rotate: 45 }}
           transition={{
             delay: 0.4,
