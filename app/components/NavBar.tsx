@@ -3,9 +3,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React, { useState } from "react";
 import { links } from "../navLinks";
-import { FaBars, FaCross } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
 import MobileMenu from "./MobileMenu";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -66,11 +65,19 @@ const NavBar = () => {
           </svg>
         )}
       </div>
-      {show && (
-        <div className=' absolute top-[6.2rem] flex items-center'>
-          <MobileMenu onClick={() => setShow(!show)} show />
-        </div>
-      )}
+      <AnimatePresence initial={false}>
+        {show && (
+          <motion.div
+            key='menu'
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -300, opacity: 0 }}
+            transition={{ ease: "linear", duration: 0.4 }}
+            className=' absolute top-[6.2rem] flex items-center'>
+            <MobileMenu onClick={() => setShow(!show)} show />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
