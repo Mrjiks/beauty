@@ -72,7 +72,11 @@ const NavBar = () => {
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
-            transition={{ ease: "linear", duration: 0.4 }}
+            transition={{
+              ease: "linear",
+              duration: 0.4,
+              // repeatType: "reverse",
+            }}
             className=' absolute top-[6.2rem] flex items-center w-full '>
             <MobileMenu onClick={() => setShow(!show)} show />
           </motion.div>
