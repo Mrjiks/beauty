@@ -10,9 +10,9 @@ const NavBar = () => {
   const pathname = usePathname();
   const [show, setShow] = useState(false);
   return (
-    <div className='container z-10 mx-auto bg-[#160716]  flex items-center justify-between  h-[100px] sticky inset-0'>
+    <div className=' z-10 mx-auto bg-[#160716]  flex items-center justify-between  h-[100px] sticky inset-0 '>
       <Link href='/'>
-        <div className='shadow-sm'>BeautyShop</div>
+        <div className='shadow-sm ml-4'>BeautyShop</div>
       </Link>
       <div className='hidden md:flex justify-between items-center'>
         <nav className='flex    justify-between items-center  h-[80px] gap-4 '>
@@ -38,7 +38,7 @@ const NavBar = () => {
           </ul>
         </nav>
       </div>
-      <div className='md:hidden cursor-pointer' onClick={() => setShow(!show)}>
+      <div className='md:hidden cursor-pointer mr-4' onClick={() => setShow(!show)}>
         {show ? (
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -73,7 +73,7 @@ const NavBar = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
             transition={{ ease: "linear", duration: 0.4 }}
-            className=' absolute top-[6.2rem] flex items-center'>
+            className=' absolute top-[6.2rem] flex items-center w-full '>
             <MobileMenu onClick={() => setShow(!show)} show />
           </motion.div>
         )}

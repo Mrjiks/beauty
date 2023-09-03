@@ -27,7 +27,7 @@ export default function Home() {
     <section
       className='container mx-auto flex flex-col  min-h-screen
     '>
-      <main className='flex flex-col justify-between mt-20  w-full px-10 items-center md:flex-row'>
+      <main className='flex flex-col justify-between mt-20  w-full  items-center md:flex-row'>
         <div className='flex  items-left  flex-col text-left'>
           <h1 className='text-2xl tracking-wide leading-8 mb-3'>
             Discover your <span>perfect look</span>

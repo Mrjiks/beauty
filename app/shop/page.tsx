@@ -6,6 +6,7 @@ import { categories } from "../navLinks";
 import ProductNav from "../components/ProductNav";
 import MobileProductNav from "../components/MobileProductNav";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Categories = {
   href: string;
@@ -68,42 +69,62 @@ const Shop = () => {
           <div className='md:hidden ' onClick={() => setShowFilter(!showFilter)}>
             <div className='flex items-center gap-2 cursor-pointer'>
               <span className='text-2xl'> Categories</span>
-              <span>
-                {showFilter ? (
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 24 24'
-                    fill='currentColor'
-                    className=' h-8 text-purple-500 w-8'>
-                    <path
-                      fillRule='evenodd'
-                      d='M20.03 4.72a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 11.69l6.97-6.97a.75.75 0 011.06 0zm0 6a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 111.06-1.06L12 17.69l6.97-6.97a.75.75 0 011.06 0z'
-                      clipRule='evenodd'
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 24 24'
-                    fill='currentColor'
-                    className='w-8 h-8'>
-                    <path
-                      fillRule='evenodd'
-                      d='M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z'
-                      clipRule='evenodd'
-                    />
-                  </svg>
-                )}
-              </span>
+              <AnimatePresence>
+                <motion.span>
+                  {showFilter ? (
+                    <motion.svg
+                      key='arrow'
+                      initial={{ y: -3, opacity: 1 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -3, opacity: 0 }}
+                      transition={{ ease: "linear", duration: 0.2 }}
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 24 24'
+                      fill='currentColor'
+                      className=' h-8 text-purple-500 w-8'>
+                      <path
+                        fillRule='evenodd'
+                        d='M20.03 4.72a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 11.69l6.97-6.97a.75.75 0 011.06 0zm0 6a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 111.06-1.06L12 17.69l6.97-6.97a.75.75 0 011.06 0z'
+                        clipRule='evenodd'
+                      />
+                    </motion.svg>
+                  ) : (
+                    <motion.svg
+                      key='arrow-2'
+                      initial={{ y: -3, opacity: 1 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -3, opacity: 0 }}
+                      transition={{ ease: "linear", duration: 0.2 }}
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 24 24'
+                      fill='currentColor'
+                      className='w-8 h-8'>
+                      <path
+                        fillRule='evenodd'
+                        d='M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z'
+                        clipRule='evenodd'
+                      />
+                    </motion.svg>
+                  )}
+                </motion.span>
+              </AnimatePresence>
             </div>
           </div>
         </div>
       </div>
-      {showFilter && (
-        <div className=' grid-cols-2 grid  gap-3 relative z-30 md:hidden lg:hidden '>
-          <MobileProductNav categories={categories} onClick={() => setShowFilter(!showFilter)} />
-        </div>
-      )}
+      <AnimatePresence>
+        {showFilter && (
+          <motion.div
+            key='nav'
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -300, opacity: 0 }}
+            transition={{ ease: "linear", duration: 0.4 }}
+            className=' grid-cols-2 grid  gap-3 relative z-30 md:hidden lg:hidden '>
+            <MobileProductNav categories={categories} onClick={() => setShowFilter(!showFilter)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className='grid grid-cols-4 gap-12 w-full px-4'>
         {teams.map((item) => {
