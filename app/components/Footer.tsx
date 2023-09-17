@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -43,20 +43,23 @@ const Footer = () => {
       </div>
       <div className='flex justify-between  bg-black text-white h-10 px-2 items-center'>
         <p>Copy Right</p>
-        <div className='flex justify-between'>
+        <p>Built in ❤️ using Next.js by Harrison, aka Mrjiks</p>
+        <div className='flex justify-between mr-5'>
           <div className='flex space-x-4'>
-            <div>
-              <FaFacebook className='cursor-pointer' />
+            <div className='flex space-x-4'>
+              <Link href={"https://www.linkedin.com/in/harrison-o-608b1579/"}>
+                <FaLinkedin className='cursor-pointer ' />
+              </Link>
+              <Link href={"https://github.com/Mrjiks"}>
+                <FaGithub className='cursor-pointer' />
+              </Link>
             </div>
-            <div>
+            {/* <div>
               <FaInstagram className='cursor-pointer' />
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <FaWhatsapp className='cursor-pointer' />
-            </div>
-            <div>
-              <FaLinkedin className='cursor-pointer' />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
