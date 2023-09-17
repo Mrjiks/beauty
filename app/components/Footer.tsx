@@ -41,8 +41,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='flex justify-between  bg-black text-white h-10 px-2 items-center'>
-        <p>Copy Right</p>
+      <div className='flex justify-between  bg-black text-white  px-2 items-center md:flex-row flex-col py-[50px] md:h-10 gap-4'>
+        <p>CopyRight &copy; 2023</p>
         <p>Built in ❤️ using Next.js by Harrison, aka Mrjiks</p>
         <div className='flex justify-between mr-5'>
           <div className='flex space-x-4'>
