@@ -8,6 +8,7 @@ import MobileProductNav from "../components/MobileProductNav";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import SearchBar from "../components/SearchBar";
 
 type Categories = {
   href: string;
@@ -35,7 +36,8 @@ const featured = ["/products/1.png", "/products/2.png", "/products/3.png", "/pro
 const Shop = () => {
   const [showFilter, setShowFilter] = useState(false);
   return (
-    <section className='container flex flex-col w-full min-h-screen items-center  py-20  px-4'>
+    <section className='container flex flex-col w-full min-h-screen items-center    px-4'>
+      <SearchBar type='search' id='name' value='name' size={50} placeholder='Search Beauty Store' />
       <h2 className='text-[3rem] py-4 text-center'>SHOP With US TODAY</h2>
       <ProductNav categories={categories} />
 
