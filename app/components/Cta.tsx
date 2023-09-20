@@ -1,8 +1,24 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Button from "./Button";
 import Input from "./Input";
 
 const Cta = () => {
+  const [state, setState] = useState<string>({ name: "", email: "", phone: "" } as any);
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setState((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
+
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log(query);
+  //   setQuery("");
+  // };
   return (
     <main className=' container p-10 justify-between bg-[#170716]  py-10 overflow-hidden flex lg:flex-row flex-col'>
       <div className=' flex  flex-col  justify-between '>
@@ -33,13 +49,21 @@ const Cta = () => {
       <div className='flex flex-col gap-2 w-full lg:w-1/3 '>
         <p className='font-bold capitalize mb-3'>Create an account</p>
         <form className='flex flex-col gap-2'>
-          <Input type='text' label='Name' id='name' value='name' placeholder='Enter your name' />
+          <Input
+            type='text'
+            label='Name'
+            id='name'
+            value='name'
+            placeholder='Enter your name'
+            onChange={(e) => e.target.value}
+          />
           <Input
             type='email'
             label='Email'
             id='email'
             value='email'
             placeholder='Enter your email'
+            onChange={(e) => e.target.value}
           />
           <Input
             type='number'
@@ -47,6 +71,7 @@ const Cta = () => {
             id='phone'
             value='phone'
             placeholder='Your phone number'
+            onChange={(e) => e.target.value}
           />
 
           <Button type title='Register' />

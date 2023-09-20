@@ -5,16 +5,10 @@ import Button from "../components/Button";
 import { categories } from "../navLinks";
 import ProductNav from "../components/ProductNav";
 import MobileProductNav from "../components/MobileProductNav";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import SearchBar from "../components/SearchBar";
 
-type Categories = {
-  href: string;
-  id: number;
-  name: string;
-}[];
 const teams = [
   { src: "/products/1.png", name: "Rossy Lipstick", price: "N5000" },
   { src: "/products/2.png", name: "Rossy Foundation", price: "N5000" },
@@ -35,14 +29,38 @@ const teams = [
 const featured = ["/products/1.png", "/products/2.png", "/products/3.png", "/products/5.png"];
 const Shop = () => {
   const [showFilter, setShowFilter] = useState(false);
+  const [query, setQuery] = useState<string>("Search products");
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(query);
+    setQuery("");
+  };
   return (
     <section className='container flex flex-col w-full min-h-screen items-center    px-4'>
-      <SearchBar type='search' id='name' value='name' size={50} placeholder='Search Beauty Store' />
-      <h2 className='text-[3rem] py-4 text-center'>SHOP With US TODAY</h2>
+      <SearchBar
+        type='search'
+        id='name'
+        value='name'
+        size={1 / 2}
+        placeholder='Search Beauty Store'
+        onSubmit={handleSubmit}
+        onChange={onChange}
+        query={query}
+      />
+      <h2 className='md:text-[3rem] py-4 text-center text-[1.5rem] capitalize'>
+        Shop with us today
+      </h2>
       <ProductNav categories={categories} />
+      <p className='font-bold'>
+        Searched word : <span className='text-red-500'>{query}</span>
+      </p>
 
       <div className='flex w-full justify-between flex-col  '>
-        <h3 className='text-[2rem] mb-4 '>Featured Products</h3>
+        <h3 className='md:text-[2rem] mb-4 text-[1.5rem] text-justify '>Featured Products</h3>
         <div className='grid md:grid-cols-2 gap-6 lg:grid-cols-3  py-10'>
           {[...Array(3)].map((image, index) => {
             return (

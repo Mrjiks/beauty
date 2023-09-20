@@ -1,11 +1,11 @@
-"use client";
+import Input, { InputType } from "./Input";
 
-import Input from "./Input";
-
-const SearchBar = ({ type, id, value, placeholder, size }: any) => {
+const SearchBar = ({ type, id, placeholder, onSubmit, query, onChange }: InputType) => {
   return (
-    <form className='  items-center  w-full justify-center gap-2  relative md:mt-30 container'>
-      <Input type={type} id={id} value={value} placeholder={placeholder} />
+    <form
+      className='  items-center  w-full justify-center gap-2  relative md:mt-30 container'
+      onSubmit={onSubmit}>
+      <Input type={type} id={id} value={query} placeholder={placeholder} onChange={onChange} />
       <button type='submit' className=' right-1  '>
         <svg
           xmlns='http://www.w3.org/2000/svg'
