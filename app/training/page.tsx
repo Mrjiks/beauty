@@ -8,6 +8,8 @@ import { useEffect, useRef } from "react";
 
 const Training = () => {
   const scrollRef = useRef<HTMLCanvasElement>(null);
+  const user = JSON.parse(localStorage.getItem("userObject"));
+  console.log(user?.name);
   const teams = [
     { src: "/team/1.jpg", name: "Rossy Dreadlocks", price: "Learn More" },
     { src: "/team/2.jpg", name: "Rossy Weevy", price: "Learn More" },
@@ -19,7 +21,10 @@ const Training = () => {
       <div className='flex items-center flex-col relative w-full mb-10'>
         <div className='flex items-center flex-col relative w-full space-y-4'>
           <h2 className='md:text-[3rem] py-4 text-3xl text-justify'>Learn From Us Today</h2>
-          <p>Embrace your beauty journey</p>
+          <p>
+            Thanks <span className='bg-red-500 capitalize'>{user?.name}</span> for joining us
+            .Embrace your beauty journey
+          </p>
           <Button title='Enroll' type />
         </div>
         <div className='flex justify-between gap-4 w-full'>

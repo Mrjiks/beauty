@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Toaster, toast } from "sonner";
 import Button from "./Button";
 import Input from "./Input";
 
 const Cta = () => {
-  const [state, setState] = useState<string>({ name: "", email: "", phone: "" } as any);
+  // const [state, setState] = useState<string>({ name: "", email: "", phone: "" } as any);
 
   // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   const { name, value } = e.target;
@@ -19,6 +21,32 @@ const Cta = () => {
   //   console.log(query);
   //   setQuery("");
   // };
+  const router = useRouter();
+
+  const [name, setName] = useState<string>("Name");
+  const [email, setEmail] = useState<string>("Email");
+  const [phone, setPhone] = useState<string>("Phone number");
+
+  const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+  const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+  const onPhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(e.target.value);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const userObject = { name: name, email: email, phone: phone };
+    window.localStorage.setItem("userObject", JSON.stringify(userObject));
+    setTimeout(() => router.push("training"), 2000);
+    setName("");
+    setEmail("");
+    setPhone("");
+  };
+
   return (
     <main className=' container p-10 justify-between bg-[#170716]  py-10 overflow-hidden flex lg:flex-row flex-col'>
       <div className=' flex  flex-col  justify-between '>
@@ -48,34 +76,44 @@ const Cta = () => {
       </div>
       <div className='flex flex-col gap-2 w-full lg:w-1/3 '>
         <p className='font-bold capitalize mb-3'>Create an account</p>
-        <form className='flex flex-col gap-2'>
+        <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
           <Input
             type='text'
             label='Name'
             id='name'
-            value='name'
+            value={name}
             placeholder='Enter your name'
-            onChange={(e) => e.target.value}
+            onChange={onNameChange}
           />
           <Input
             type='email'
             label='Email'
             id='email'
-            value='email'
+            value={email}
             placeholder='Enter your email'
-            onChange={(e) => e.target.value}
+            onChange={onEmailChange}
           />
           <Input
             type='number'
             label='Phone'
             id='phone'
-            value='phone'
+            value={phone}
             placeholder='Your phone number'
-            onChange={(e) => e.target.value}
+            onChange={onPhoneChange}
           />
 
-          <Button type title='Register' />
+          <Button
+            type
+            title='Register'
+            alert={() =>
+              toast.success("Registered Successfully", {
+                position: "top-center",
+                duration: 2000,
+              })
+            }
+          />
         </form>
+        <Toaster />
       </div>
     </main>
   );
