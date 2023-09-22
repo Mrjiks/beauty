@@ -4,16 +4,22 @@ import React from "react";
 import Button from "../components/Button";
 import Cta from "../components/Cta";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Training = () => {
   const scrollRef = useRef<HTMLCanvasElement>(null);
+  type UserType = {
+    name: string | undefined;
+    email: string;
+    phone: string;
+  };
+  const [user, setUser] = useState<UserType>();
 
-  let user;
   useEffect(() => {
-    user = JSON.parse(localStorage.getItem("userObject") as any);
-    console.log(user?.name);
+    let user = JSON.parse(localStorage.getItem("userObject") as any);
+    setUser(user);
   }, []);
+
   const teams = [
     { src: "/team/1.jpg", name: "Rossy Dreadlocks", price: "Learn More" },
     { src: "/team/2.jpg", name: "Rossy Weevy", price: "Learn More" },
@@ -26,8 +32,8 @@ const Training = () => {
         <div className='flex items-center flex-col relative w-full space-y-4'>
           <h2 className='md:text-[3rem] py-4 text-3xl text-justify'>Learn From Us Today</h2>
           <p>
-            Thanks <span className='bg-red-500 capitalize'>{user?.name}</span> for joining us
-            .Embrace your beauty journey
+            Thanks <span className='bg-red-500 capitalize px-3 rounded-sm'>{user?.name}</span> for
+            joining us .Embrace your beauty journey
           </p>
           <Button title='Enroll' type />
         </div>
@@ -85,7 +91,7 @@ const Training = () => {
           );
         })}
       </div>
-      <Cta />
+      <Cta userName={user?.name} />
     </section>
   );
 };

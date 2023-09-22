@@ -1,26 +1,15 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "sonner";
 import Button from "./Button";
 import Input from "./Input";
 
-const Cta = () => {
-  // const [state, setState] = useState<string>({ name: "", email: "", phone: "" } as any);
+export type User = {
+  userName?: string | undefined;
+};
 
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setState((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // };
-
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   console.log(query);
-  //   setQuery("");
-  // };
+const Cta = ({ userName }: User) => {
   const router = useRouter();
 
   const [name, setName] = useState<string>("Name");
@@ -53,8 +42,10 @@ const Cta = () => {
     <main className=' container p-10 justify-between bg-[#170716]  py-10 overflow-hidden flex lg:flex-row flex-col'>
       <div className=' flex  flex-col  justify-between '>
         <div className='flex  flex-col w-full'>
-          <h3 className='text-[2rem] '>Become a World class Stylist Today!</h3>
-          <p className='text-[#cd00c5] mb-10 font-extrabold'>Register Now</p>
+          <h3 className='text-[2rem] capitalize'>
+            {userName}, become a world class Stylist Today!
+          </h3>
+          <p className='text-[#cd00c5] mb-10 font-extrabold'>Register for a course Now</p>
           <h3>Get 30% Off</h3>
         </div>
         <div className='flex   gap-2 w-full lg:flex-row'>

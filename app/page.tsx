@@ -3,28 +3,10 @@ import Image from "next/image";
 import Featured from "./components/Featured";
 import Button from "./components/Button";
 import Cta from "./components/Cta";
-import PocketBase from "pocketbase";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  // const pb = new PocketBase("http://127.0.0.1:8090");
-  // pb.autoCancellation(false);
-  // const [product, setProduct] = useState(null);
-
-  // const getProducts = async () => {
-  //   const data = await pb.collection("products").getFullList({
-  //     sort: "-created",
-  //   });
-  //   setProduct(data);
-  //   return data;
-  // };
-
-  // useEffect(() => {
-  //   const data = getProducts();
-  //   console.log(product);
-  // }, []);
   return (
     <section
       className='container mx-auto flex flex-col  min-h-screen
