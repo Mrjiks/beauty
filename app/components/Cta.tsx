@@ -12,9 +12,9 @@ export type User = {
 const Cta = ({ userName }: User) => {
   const router = useRouter();
 
-  const [name, setName] = useState<string>("Name");
-  const [email, setEmail] = useState<string>("Email");
-  const [phone, setPhone] = useState<string>("Phone number");
+  const [name, setName] = useState<string>("John Doe");
+  const [email, setEmail] = useState<string>("johndoe@gmail.com");
+  const [phone, setPhone] = useState<string>("0123456");
 
   const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
