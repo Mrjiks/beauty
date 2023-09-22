@@ -8,8 +8,12 @@ import { useEffect, useRef } from "react";
 
 const Training = () => {
   const scrollRef = useRef<HTMLCanvasElement>(null);
-  const user = JSON.parse(localStorage.getItem("userObject"));
-  console.log(user?.name);
+
+  let user;
+  useEffect(() => {
+    user = JSON.parse(localStorage.getItem("userObject") as any);
+    console.log(user?.name);
+  }, []);
   const teams = [
     { src: "/team/1.jpg", name: "Rossy Dreadlocks", price: "Learn More" },
     { src: "/team/2.jpg", name: "Rossy Weevy", price: "Learn More" },

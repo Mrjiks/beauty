@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "sonner";
 import Button from "./Button";
@@ -39,8 +39,10 @@ const Cta = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const userObject = { name: name, email: email, phone: phone };
-    window.localStorage.setItem("userObject", JSON.stringify(userObject));
+    if (typeof window !== "undefined") {
+      const userObject = { name: name, email: email, phone: phone };
+      localStorage.setItem("userObject", JSON.stringify(userObject) as any);
+    }
     setTimeout(() => router.push("training"), 2000);
     setName("");
     setEmail("");
