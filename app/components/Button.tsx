@@ -4,7 +4,7 @@ type ButtonType = {
   type?: boolean;
   title?: string;
   alert?: () => void;
-  userName: string;
+  userName?: string;
 };
 const Button = ({ type, title, alert, userName }: ButtonType) => {
   return (
