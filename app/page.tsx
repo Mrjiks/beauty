@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Featured from "./components/Featured";
 import Button from "./components/Button";
-import Cta from "./components/Cta";
+import Register from "./components/Register";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </main>
       <Featured />
-      <Cta />
+      <Register />
       <div className='grid grid-cols-1  overflow-hidden w h-[800px w-auto] gap-8 grid-rows-2 relative md:hidden px-10 py-10 bg-black'>
         <motion.img
           className=' absolute top-10 right-10'

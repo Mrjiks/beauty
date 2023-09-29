@@ -36,7 +36,6 @@ const Shop = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(query);
     setQuery("");
   };
   return (

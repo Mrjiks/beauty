@@ -9,7 +9,7 @@ export type User = {
   userName?: string | undefined;
 };
 
-const Cta = ({ userName }: User) => {
+const Register = ({ userName }: User) => {
   const router = useRouter();
 
   const [name, setName] = useState<string>("John Doe");
@@ -32,7 +32,7 @@ const Cta = ({ userName }: User) => {
       const userObject = { name: name, email: email, phone: phone };
       localStorage.setItem("userObject", JSON.stringify(userObject) as any);
     }
-    setTimeout(() => router.push("training"), 2000);
+    setTimeout(() => router.push("login"), 2000);
     setName("");
     setEmail("");
     setPhone("");
@@ -112,4 +112,4 @@ const Cta = ({ userName }: User) => {
   );
 };
 
-export default Cta;
+export default Register;

@@ -2,18 +2,19 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../components/Button";
-import Cta from "../components/Cta";
-
+import Register from "../components/Register";
+import { NextResponse } from "next/server";
+import { redirect } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const Training = () => {
-  const scrollRef = useRef<HTMLCanvasElement>(null);
   type UserType = {
-    name: string | undefined;
-    email: string;
-    phone: string;
+    name?: string | undefined;
+    email?: string;
+    phone?: string;
   };
   const [user, setUser] = useState<UserType>();
+  const [userAuth, setUserAuth] = useState<UserType>();
 
   useEffect(() => {
     let user = JSON.parse(localStorage.getItem("userObject") as any);
@@ -91,7 +92,7 @@ const Training = () => {
           );
         })}
       </div>
-      <Cta userName={user?.name} />
+      <Register userName={user?.name} />
     </section>
   );
 };
