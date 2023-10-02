@@ -32,7 +32,7 @@ const ProductList: React.FC<StoreState> = () => {
               </div>
               <div className='flex  justify-between px-1 flex-col '>
                 <h2 className='capitalize py-4 font-semibold text-purple-600'>{item.name}</h2>
-                <p>{item?.description}</p>
+                {/* <p>{item?.description}</p> */}
               </div>
               <div className='flex  items-center justify-between gap-4 py-1'>
                 <p>${item.price}</p>
@@ -69,7 +69,7 @@ const ProductList: React.FC<StoreState> = () => {
               </div>
               <div className='flex  justify-between px-1 flex-col '>
                 <h2 className='capitalize py-4 font-semibold text-purple-600'>{item.name}</h2>
-                <p>{item?.description}</p>
+                {/* <p>{item?.description}</p> */}
               </div>
               <div className='flex  items-center justify-between gap-4 py-1'>
                 <p>${item.price}</p>

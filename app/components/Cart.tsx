@@ -14,15 +14,15 @@ const Cart: React.FC = () => {
     <div className='container py-10 min-h-screen'>
       <div className='flex items-center justify-between mb-3 px-2'>
         <h2 className='font-bold text-2xl'>Shopping Cart</h2>
-        <p>Number of items in the cart:</p>
+        <p className='hidden md:block'>Number of items in the cart:</p>
         {cart.length > 0 && <CartIcon cart={cart.length} />}
       </div>
 
       <ul className='flex gap-2 flex-col '>
         {cart?.map((product) => {
           return (
-            <ul className='flex gap-2'>
-              <li key={product.id} className='flex gap-2 py-2 justify-between border w-full px-2'>
+            <ul className='flex gap-2' key={product.id}>
+              <li className='flex gap-2 py-2 justify-between border w-full px-2'>
                 <div className='aspect-square relative '>
                   <Image
                     height={50}

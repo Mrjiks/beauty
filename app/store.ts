@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { fakerDE as faker } from "@faker-js/faker";
 
 export interface Product {
-  id: number;
+  id: string;
   name: string;
   src: string;
   price?: number;
@@ -10,6 +10,7 @@ export interface Product {
   available?: boolean;
   cart?: number;
   featured?: boolean;
+  category?: string;
 }
 
 export interface StoreState {
@@ -20,7 +21,7 @@ export interface StoreState {
 
 interface StoreActions {
   addToCart: (product: Product) => void;
-  removeFromCart: (productId: number) => void;
+  removeFromCart: (productId: string) => void;
   clearCart: () => void;
   addToFavorite: (product: Product) => void;
 }
@@ -57,8 +58,8 @@ const useStore = create<StoreState & StoreActions & StoreSelectors>((set) => ({
       src: "/products/1.png",
       name: "Rossy Lipstick",
       price: 5000,
-      id: 1,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
       featured: true,
     },
@@ -66,16 +67,16 @@ const useStore = create<StoreState & StoreActions & StoreSelectors>((set) => ({
       src: "/products/2.png",
       name: "Rossy Foundation",
       price: 5000,
-      id: 2,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
     {
       src: "/products/3.png",
       name: "Rossy Foundation",
       price: 5000,
-      id: 3,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
       featured: false,
     },
@@ -84,24 +85,24 @@ const useStore = create<StoreState & StoreActions & StoreSelectors>((set) => ({
       src: "/products/5.png",
       name: "Rossy powder",
       price: 5000,
-      id: 4,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
     {
       src: "/products/6.png",
       name: "Rossy powder",
       price: 5000,
-      id: 5,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
     {
       src: "/products/7.png",
       name: "Beauty Blender",
       price: 5000,
-      id: 6,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
       featured: true,
     },
@@ -109,16 +110,16 @@ const useStore = create<StoreState & StoreActions & StoreSelectors>((set) => ({
       src: "/products/8.png",
       name: "Rossy Brush",
       price: 5000,
-      id: 7,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
     {
       src: "/products/9.png",
       name: "Rossy powder",
       price: 5000,
-      id: 8,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
 
@@ -126,40 +127,40 @@ const useStore = create<StoreState & StoreActions & StoreSelectors>((set) => ({
       src: "/products/11.jpg",
       name: "Rossy Lipstick",
       price: 5000,
-      id: 9,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
     {
       src: "/products/14.jpg",
       name: "Rossy Lipstick",
       price: 5000,
-      id: 10,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
     {
       src: "/products/12.jpg",
       name: "Rossy Lipstick",
       price: 5000,
-      id: 11,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
     {
       src: "/products/10.jpg",
       name: "Rossy Lipstick",
       price: 5000,
-      id: 12,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
     {
       src: "/products/13.jpg",
       name: "Rossy Lipstick",
       price: 5000,
-      id: 13,
-      description: generateFakeProductDescription(),
+      id: faker.string.uuid(),
+      description: faker.lorem.sentences(2),
       available: true,
     },
   ],

@@ -3,6 +3,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import { links } from "../navLinks";
+import useStore from "../store";
+import CartIcon from "./CartIcon";
 
 type MenuType = {
   onClick: () => void;
@@ -11,6 +13,8 @@ type MenuType = {
 
 const MobileMenu = ({ onClick, show }: MenuType) => {
   const pathname = usePathname();
+  const cart = useStore((state) => state.cart);
+
   return (
     <div className='flex flex-col   sticky  md:hidden lg:hidden w-full z-[900]'>
       <nav className='flex justify-center  lg:hidden   h-[100px] bg-black '>

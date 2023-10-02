@@ -43,9 +43,11 @@ const NavBar = () => {
           </ul>
         </nav>
       </div>
-      <div className='md:hidden cursor-pointer mr-4' onClick={() => setShow(!show)}>
+      <div className='md:hidden cursor-pointer mr-4 flex items-center gap-2'>
+        {cart.length > 0 && <CartIcon cart={cart.length} />}
         {show ? (
           <svg
+            onClick={() => setShow(!show)}
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 24 24'
             fill='currentColor'
@@ -58,6 +60,7 @@ const NavBar = () => {
           </svg>
         ) : (
           <svg
+            onClick={() => setShow(!show)}
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 24 24'
             fill='currentColor'
