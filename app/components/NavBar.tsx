@@ -5,17 +5,22 @@ import React, { useState } from "react";
 import { links } from "../navLinks";
 import MobileMenu from "./MobileMenu";
 import { motion, AnimatePresence } from "framer-motion";
+import CartIcon from "./CartIcon";
+import useStore from "../store";
 
 const NavBar = () => {
   const pathname = usePathname();
   const [show, setShow] = useState(false);
+  const cart = useStore((state) => state.cart);
   return (
     <div className=' z-10 mx-auto bg-[#160716]  flex items-center justify-between  h-[100px] sticky inset-0 '>
       <Link href='/'>
         <div className='shadow-sm ml-4'>BeautyShop</div>
       </Link>
+
       <div className='hidden md:flex justify-between items-center'>
         <nav className='flex    justify-between items-center  h-[80px] gap-4 mr-4'>
+          {cart.length > 0 && <CartIcon cart={cart.length} />}
           <ul className='flex justify-around  gap-4'>
             <>
               {links.map((link) => {
