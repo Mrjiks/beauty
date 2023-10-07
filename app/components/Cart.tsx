@@ -14,7 +14,7 @@ const Cart: React.FC = () => {
     <div className='container py-10 min-h-screen'>
       <div className='flex items-center justify-between mb-3 px-2'>
         <h2 className='font-bold text-2xl'>Shopping Cart</h2>
-        <p className='hidden md:block'>Number of items in the cart:</p>
+        <p className='hidden md:block '>Number of items in the cart:</p>
         {cart.length > 0 && <CartIcon cart={cart.length} />}
       </div>
 

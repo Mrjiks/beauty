@@ -1,5 +1,4 @@
 import React from "react";
-import useStore, { StoreState, Product } from "@/app/store";
 import Link from "next/link";
 type CartType = {
   cart: number;
